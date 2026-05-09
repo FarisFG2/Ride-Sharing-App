@@ -1,0 +1,11 @@
+com\ridesharing\userservice\controller\AuthController.class
+com\ridesharing\userservice\config\JwtAuthenticationFilter.class
+com\ridesharing\userservice\config\SecurityConfig.class
+com\ridesharing\userservice\controller\UserController.class
+com\ridesharing\userservice\model\User$Role.class
+com\ridesharing\userservice\aop\LoggingAspect.class
+com\ridesharing\userservice\repository\UserRepository.class
+com\ridesharing\userservice\UserServiceApplication.class
+com\ridesharing\userservice\config\JwtUtil.class
+com\ridesharing\userservice\service\UserService.class
+com\ridesharing\userservice\model\User.class

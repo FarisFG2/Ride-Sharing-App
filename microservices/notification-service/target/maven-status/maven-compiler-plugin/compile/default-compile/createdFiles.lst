@@ -1,0 +1,10 @@
+com\ridesharing\notificationservice\model\Notification.class
+com\ridesharing\notificationservice\controller\NotificationController.class
+com\ridesharing\notificationservice\config\JwtAuthenticationFilter.class
+com\ridesharing\notificationservice\repository\NotificationRepository.class
+com\ridesharing\notificationservice\config\SecurityConfig.class
+com\ridesharing\notificationservice\model\Notification$NotificationType.class
+com\ridesharing\notificationservice\service\NotificationService.class
+com\ridesharing\notificationservice\config\JwtUtil.class
+com\ridesharing\notificationservice\NotificationServiceApplication.class
+com\ridesharing\notificationservice\aop\LoggingAspect.class

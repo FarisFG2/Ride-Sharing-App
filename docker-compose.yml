@@ -1,0 +1,82 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: userdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  discovery-service:
+    build: ./microservices/discovery-service
+    ports:
+      - "8761:8761"
+    depends_on:
+      - mysql
+
+  gateway-service:
+    build: ./microservices/gateway-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - discovery-service
+      - mysql
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
+
+  user-service:
+    build: ./microservices/user-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery-service
+      - mysql
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/userdb
+
+  ride-service:
+    build: ./microservices/ride-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - discovery-service
+      - mysql
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ridedb
+
+  payment-service:
+    build: ./microservices/payment-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - discovery-service
+      - mysql
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/paymentdb
+
+  notification-service:
+    build: ./microservices/notification-service
+    ports:
+      - "8084:8084"
+    depends_on:
+      - discovery-service
+      - mysql
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/notificationdb
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - gateway-service
+
+volumes:
+  mysql_data:

@@ -1,0 +1,15 @@
+com\ridesharing\rideservice\config\FeignConfig$1.class
+com\ridesharing\rideservice\aop\LoggingAspect.class
+com\ridesharing\rideservice\model\Ride.class
+com\ridesharing\rideservice\client\PaymentClient.class
+com\ridesharing\rideservice\config\SecurityConfig.class
+com\ridesharing\rideservice\model\Ride$RideStatus.class
+com\ridesharing\rideservice\client\NotificationClient.class
+com\ridesharing\rideservice\repository\RideRepository.class
+com\ridesharing\rideservice\config\JwtUtil.class
+com\ridesharing\rideservice\client\UserClient.class
+com\ridesharing\rideservice\RideServiceApplication.class
+com\ridesharing\rideservice\config\FeignConfig.class
+com\ridesharing\rideservice\controller\RideController.class
+com\ridesharing\rideservice\config\JwtAuthenticationFilter.class
+com\ridesharing\rideservice\service\RideService.class
