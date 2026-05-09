@@ -224,16 +224,16 @@ The system will be built using the following microservices:
 
 ### 7.1 Use Case Diagram
 
-See diagrams/use-case-diagram.mmd
+See diagrams/use-case-diagram.png
 
 ### 7.2 Class Diagram
 
-See diagrams/class-diagram.mmd
+See diagrams/class-diagram.png
 
 ### 7.3 Sequence Diagram
 
-See diagrams/sequence-diagram.mmd
+See diagrams/sequence-diagram.png
 
 ### 7.4 Activity Diagram
 
-See diagrams/activity-diagram.mmd
+See diagrams/activity-diagram.png
